@@ -1,0 +1,12 @@
+apiVerson: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: podinfo-ingress
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - backend:
+            serviceName: podinfo-internal-service
+            servicePort: 9898
